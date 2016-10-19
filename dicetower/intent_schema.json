@@ -1,0 +1,26 @@
+{
+  "intents": [
+    {
+      "intent": "DiceRoll",
+      "slots": [
+        {
+          "name": "Num",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Die",
+          "type": "LIST_OF_DICE"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

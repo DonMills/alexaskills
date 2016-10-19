@@ -1,0 +1,6 @@
+DiceRoll roll these dice {Num} {Die}
+DiceRoll roll {Num} {Die}
+DiceRoll roll dice {Num} {Die}
+DiceRoll roll die {Die} times {Num}
+DiceRoll roll {Die} {Num} times
+DiceRoll roll {Die} times {Num}
