@@ -1,0 +1,8 @@
+PresYear who was president in {year}
+PresYear who was the president in {year}
+PresYear in the year {year} who was president
+PresYear in the year {year} who was the president
+PresYear in {year} who was president
+PresYear in {year} who was the president
+PresYear who was president in the year {year}
+PresYear who was the president in the year {year}
