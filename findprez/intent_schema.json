@@ -1,23 +1,22 @@
 {
-    "intents": [
-            {
-	                "intent": "PresYear",
-			            "slots": [
-				                    {
-						                        "name": "year",
-									                    "type": "AMAZON.FOUR_DIGIT_NUMBER"
-											                    }
-													                ]
-															        },
-																        {
-																	            "intent": "AMAZON.HelpIntent"
-																		            },
-																			            {
-																				                "intent": "AMAZON.StopIntent"
-																						        },
-																							        {
-																								            "intent": "AMAZON.CancelIntent"
-																									            }
-																										        ]
-																											}
-
+  "intents": [
+    {
+      "intent": "PresYear",
+      "slots": [
+        {
+          "name": "year",
+          "type": "AMAZON.FOUR_DIGIT_NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
