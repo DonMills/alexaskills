@@ -1,5 +1,5 @@
-import os,random
-import urllib2
+import random
+
 
 
 def lambda_handler(event, context):
@@ -42,7 +42,7 @@ def on_session_ended(session_ended_request, session):
 
 def handle_session_end_request():
     card_title = "DiceTower - Thanks"
-    speech_output = "Thank you for using the DiceTower skill.  See you next time!"
+    speech_output = "Thank you for using the Dice Tower skill.  See you next time!"
     should_end_session = True
 
     return build_response({}, build_speechlet_response(card_title, speech_output, None, should_end_session))
@@ -50,7 +50,7 @@ def handle_session_end_request():
 def get_welcome_response():
     session_attributes = {}
     card_title = "DiceTower"
-    speech_output = "Welcome to the Alexa DiceTower skill. " \
+    speech_output = "Welcome to the Dice Tower skill. " \
                     "You can ask me to roll dice for you by " \
                     "telling me how many rolls of what kind of die."
     reprompt_text = "Please ask me for a dice roll, " \
@@ -73,14 +73,15 @@ def get_diceroll(intent):
     if "Num" in intent["slots"] and "Die" in intent["slots"]:
         try:
             print "Num: " + str(intent["slots"]["Num"]["value"])
-            print "Die: " + intent["slots"]["Die"]["value"]
+            print "Die: " + str(intent["slots"]["Die"]["value"])
             if intent["slots"]["Num"]["value"] != "?" or intent["slots"]["Die"]["value"] != "?" :
                 num = int(intent["slots"]["Num"]["value"])
-                die = intent["slots"]["Die"]["value"]
+                die = int(intent["slots"]["Die"]["value"])
                 try:
                     value = rolldice(num,die)
                     speech_output = "The Dice Roll resulted in " + str(value) + "."
                     reprompt_text = ""
+                    should_end_session = True
                 except:
                     pass
         except:
@@ -125,18 +126,8 @@ def rolldice(num,die):
         return total
 
 def pickdie(die):
-        if die == "dfour":
-                b,e = 1,4
-        elif die == "dsix":
-                b,e = 1,6
-        elif die == "deight":
-                b,e = 1,8
-        elif die == "dten":
-                b,e = 1,10
-        elif die == "dtwelve":
-                b,e = 1,12
-        elif die == "dtwenty":
-                b,e = 1,20
+        if (die in [4,6,8,10,12,20]):
+            b,e = 1,die
         else:
                 print "Unrecognized die size"
                 raise ValueError('Unrecognized die size')

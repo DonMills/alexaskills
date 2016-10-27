@@ -1,26 +1,26 @@
 {
-  "intents": [
-    {
-      "intent": "DiceRoll",
-      "slots": [
+    "intents": [
         {
-          "name": "Num",
-          "type": "AMAZON.NUMBER"
+            "intent": "DiceRoll",
+            "slots": [
+                {
+                    "name": "Num",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "Die",
+                    "type": "AMAZON.NUMBER"
+                }
+            ]
         },
         {
-          "name": "Die",
-          "type": "LIST_OF_DICE"
+            "intent": "AMAZON.HelpIntent"
+        },
+        {
+            "intent": "AMAZON.StopIntent"
+        },
+        {
+            "intent": "AMAZON.CancelIntent"
         }
-      ]
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    }
-  ]
+    ]
 }

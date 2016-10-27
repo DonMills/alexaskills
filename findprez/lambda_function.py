@@ -68,7 +68,7 @@ def handle_session_end_request():
 def get_welcome_response():
     session_attributes = {}
     card_title = "FindPrez"
-    speech_output = "Welcome to the Alexa Find President skill. " \
+    speech_output = "Welcome to the Find President skill. " \
                     "You can ask me to find out who was President " \
                     "in a certain year."
     reprompt_text = "Please ask me a year, " \
@@ -88,19 +88,23 @@ def get_president_by_year(intent):
     should_end_session = False
 
     if "year" in intent["slots"]:
-        year = intent["slots"]["year"]["value"]
-        if year == "?":
+        try:
+            year = intent["slots"]["year"]["value"]
+            if year == "?":
                 speech_output = "I did not understand the year you gave. " \
                                 "Please ask for a year between 1789 and 2016."
                 reprompt_text = "Please ask for a year between 1789 and 2016."
-        else:
-            if 1789 <= int(year) <= 2016:
+            else:
+                if 1789 <= int(year) <= 2016:
                     speech_output = findprez(int(year))
                     reprompt_text = ""
-            else:
+                    should_end_session = True
+                else:
                     speech_output = "That is not a valid year for American Presidents" \
                                 "Please ask for a year between 1789 and 2016."
                     reprompt_text = "Please ask for a year between 1789 and 2016."
+        except:
+            pass
 
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))

@@ -1,6 +1,11 @@
-DiceRoll roll these dice {Num} {Die}
-DiceRoll roll {Num} {Die}
-DiceRoll roll dice {Num} {Die}
-DiceRoll roll die {Die} times {Num}
-DiceRoll roll {Die} {Num} times
-DiceRoll roll {Die} times {Num}
+DiceRoll roll these dice {Num} times {Die} sided
+DiceRoll roll {Num} times {Die} sided
+DiceRoll roll dice {Num} times {Die} sided
+DiceRoll roll die {Die} sided times {Num}
+DiceRoll roll {Die} sided {Num} times
+DiceRoll roll {Die} sided times {Num}
+DiceRoll roll these dice {Num} times {Die} sided dice
+DiceRoll roll {Num} times {Die} sided dice
+DiceRoll roll die {Die} sided times {Num}
+DiceRoll roll {Die} sided dice {Num} times
+DiceRoll roll {Die} sided dice times {Num}
